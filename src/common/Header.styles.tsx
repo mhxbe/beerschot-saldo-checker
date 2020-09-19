@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
 export const StyledHeader = styled.header`
-  background-color: #00d8ff;
+  background-color: #4b0082;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ export const StyledHeader = styled.header`
 `;
 
 export const HeaderTitle = styled.span`
-  color: #282a37;
+  color: #ffffff;
   font-size: 1.25rem;
   font-weight: bold;
   line-height: 1;

@@ -21,7 +21,7 @@ export const Title = styled.h1`
   font-size: 1.25rem;
   font-weight: bold;
   line-height: 1;
-  border-bottom: 2px solid #00d8ff;
+  border-bottom: 2px solid #4b0082;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 
@@ -135,7 +135,7 @@ const reset = css`
   }
 
   html {
-    background-color: #00d8ff; /* iOS topbar background color when black-translucent */
+    background-color: #4b0082; /* iOS topbar background color when black-translucent */
     height: 100%;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 16px;

@@ -2,9 +2,7 @@ import * as React from 'react';
 import { Switch, Route, Redirect, RouteComponentProps } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ResetCss, Main, Content } from './App.styles';
-import useShowSidebar from './hooks/show-sidebar';
 import Header from './common/Header';
-import Sidebar from './common/Sidebar';
 import ErrorFallback, { errorHandler } from './common/ErrorFallback';
 
 const Home = React.lazy(
@@ -18,32 +16,12 @@ const PageNotFound = React.lazy(
 );
 
 const App: React.FC = () => {
-  const {
-    showSidebar,
-    setShowSidebar,
-    showContent,
-    setShowContent,
-    toggleSidebarRef,
-  } = useShowSidebar();
-
   return (
     <>
       <ResetCss />
-      <Header
-        showSidebar={showSidebar}
-        onToggleSidebar={() => {
-          setShowSidebar(!showSidebar);
-          setShowContent(showSidebar);
-        }}
-        toggleSidebarRef={toggleSidebarRef}
-      />
+      <Header />
       <Main role="main">
-        <Sidebar
-          showSidebar={showSidebar}
-          onToggleSidebar={setShowSidebar}
-          toggleSidebarRef={toggleSidebarRef}
-        />
-        <Content aria-hidden={!showContent}>
+        <Content>
           <React.Suspense fallback={<div>Loading...</div>}>
             <Switch>
               <Route
