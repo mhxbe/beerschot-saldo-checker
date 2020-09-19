@@ -1,16 +1,16 @@
 {
-  "lang": "en",
+  "lang": "nl",
   "dir": "ltr",
-  "name": "mhxbe's React Starterkit",
-  "short_name": "React Starterkit",
+  "name": "Beerschot Abonnementen Saldo Checker",
+  "short_name": "Saldo Checker",
   "start_url": ".",
   "scope": ".",
-  "description": "An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript.",
+  "description": "Met deze app kan je snel het saldo van je abonnementen raadplegen.",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#5d3281",
   "theme_color": "#5d3281",
-  "categories": ["web development"],
+  "categories": ["sports"],
   "icons": [
     {
       "src": "./images/icon-192x192.png",
