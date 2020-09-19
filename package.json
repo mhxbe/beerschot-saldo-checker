@@ -1,0 +1,109 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript.",
+  "browser": "src/index.tsx",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "lint:css": "stylelint \"src/**\"",
+    "lint:js": "eslint \"src/**\""
+  },
+  "keywords": [
+    "react",
+    "starter-kit",
+    "typescript"
+  ],
+  "author": {
+    "name": "Mike Henderyckx",
+    "email": "mike.henderyckx@gmail.com",
+    "url": "https://mhx.be/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhxbe/react-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mhxbe/react-starter/issues"
+  },
+  "directories": {
+    "lib": "src",
+    "doc": "README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": "~6.14.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "dependencies": {
+    "@emotion/core": "10.0.35",
+    "@emotion/styled": "10.0.27",
+    "focus-visible": "5.1.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-error-boundary": "3.0.2",
+    "react-helmet": "6.1.0",
+    "react-router-dom": "5.2.0",
+    "workbox-core": "6.0.0-alpha.2",
+    "workbox-precaching": "6.0.0-alpha.2",
+    "workbox-routing": "6.0.0-alpha.2",
+    "workbox-strategies": "6.0.0-alpha.2",
+    "workbox-window": "6.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.11.6",
+    "@babel/core": "7.11.6",
+    "@babel/preset-env": "7.11.5",
+    "@babel/preset-react": "7.10.4",
+    "@babel/preset-typescript": "7.10.4",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.4.2",
+    "@types/copy-webpack-plugin": "6.0.0",
+    "@types/html-webpack-plugin": "3.2.3",
+    "@types/jest": "26.0.14",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "@types/react-helmet": "6.1.0",
+    "@types/react-router-dom": "5.1.5",
+    "@types/webpack": "4.41.22",
+    "@types/webpack-bundle-analyzer": "3.8.0",
+    "@types/webpack-dev-server": "3.11.0",
+    "@types/webpack-env": "1.15.3",
+    "@types/workbox-webpack-plugin": "5.1.4",
+    "@types/workbox-window": "4.3.3",
+    "@typescript-eslint/eslint-plugin": "4.1.1",
+    "@typescript-eslint/parser": "4.1.1",
+    "babel-jest": "26.3.0",
+    "babel-loader": "8.1.0",
+    "clean-webpack-plugin": "3.0.0",
+    "copy-webpack-plugin": "6.1.1",
+    "eslint": "7.9.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-compat": "3.8.0",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.20.6",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "html-webpack-plugin": "4.4.1",
+    "husky": "4.3.0",
+    "jest": "26.4.2",
+    "prettier": "2.1.2",
+    "pretty-quick": "3.0.2",
+    "react-refresh": "0.8.3",
+    "stylelint": "13.7.1",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-recommended": "3.0.0",
+    "ts-node": "9.0.0",
+    "typescript": "4.0.3",
+    "webpack": "5.0.0-beta.31",
+    "webpack-bundle-analyzer": "3.9.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0",
+    "workbox-webpack-plugin": "6.0.0-alpha.2"
+  }
+}

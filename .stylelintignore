@@ -1,0 +1,11 @@
+node_modules/
+dist/
+src/images
+src/fonts
+
+*.ts
+*.html
+*.md
+*.webmanifest
+*.txt
+*.json
