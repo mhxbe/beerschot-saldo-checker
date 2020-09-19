@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from '../constants';
 
 export const StyledHeader = styled.header`
-  background-color: #4b0082;
+  background-color: #5d3281;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -17,15 +17,12 @@ export const StyledHeader = styled.header`
   z-index: 3;
 `;
 
-export const HeaderTitle = styled.span`
-  color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: bold;
-  line-height: 1;
-
-  @media (min-width: 440px) {
-    font-size: 1.5rem;
-  }
+export const Logo = styled.img`
+  left: calc(50% - 30px);
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  width: 60px;
 `;
 
 export const MenuIconWrapper = styled.div`

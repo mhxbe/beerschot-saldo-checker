@@ -89,6 +89,13 @@ export default function (env: envType, { mode }: argvType): Configuration {
             },
           ],
         },
+        {
+          test: /\.html$/i,
+          loader: 'html-loader',
+          options: {
+            esModule: true,
+          },
+        },
       ],
     },
     resolve: { extensions: ['.js', '.ts', '.tsx'] },

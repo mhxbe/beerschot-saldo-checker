@@ -1,10 +1,13 @@
 import * as React from 'react';
-import { StyledHeader, HeaderTitle } from './Header.styles';
+import { StyledHeader, Logo } from './Header.styles';
 
 const Header: React.FC = () => {
   return (
     <StyledHeader>
-      <HeaderTitle>Beerschot Saldo Checker</HeaderTitle>
+      <Logo
+        src="../images/logo.png"
+        alt="Beerschot Abonnementen Saldo Checker logo"
+      />
     </StyledHeader>
   );
 };
