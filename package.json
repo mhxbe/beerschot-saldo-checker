@@ -1,7 +1,7 @@
 {
   "name": "react-starter",
-  "version": "1.0.0",
-  "description": "An opinionated starter-kit for quickly bootstrapping client-side React projects written in TypeScript.",
+  "version": "0.1.0",
+  "description": "An application to easily check season cards' saldo.",
   "browser": "src/index.tsx",
   "scripts": {
     "test": "jest",
@@ -12,8 +12,8 @@
   },
   "keywords": [
     "react",
-    "starter-kit",
-    "typescript"
+    "typescript",
+    "beerschot"
   ],
   "author": {
     "name": "Mike Henderyckx",
@@ -23,10 +23,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mhxbe/react-starter.git"
+    "url": "https://github.com/mhxbe/beerschot-saldo-checker.git"
   },
   "bugs": {
-    "url": "https://github.com/mhxbe/react-starter/issues"
+    "url": "https://github.com/mhxbe/beerschot-saldo-checker/issues"
   },
   "directories": {
     "lib": "src",
