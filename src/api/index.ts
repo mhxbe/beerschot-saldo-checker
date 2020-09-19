@@ -1,4 +1,7 @@
 export async function getSaldo(cardNumber: string): Promise<string> {
-  const url = 'https://mhx.be/beerschot-saldo-checker/api?cardNo=';
+  let url = `/api?cardNo=`;
+  if (process.env.NODE_ENV === 'development') {
+    url = `http://localhost:57888${url}`;
+  }
   return await (await fetch(`${url}${cardNumber}`)).json();
 }

@@ -32,6 +32,7 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
         { from: './src/fonts', to: 'fonts' },
         { from: './src/manifest.webmanifest' },
         { from: './src/robots.txt' },
+        { from: './php/index.php', to: '/api/index.php' },
         { from: '.htaccess' },
       ],
     }),
