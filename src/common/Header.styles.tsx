@@ -18,11 +18,11 @@ export const StyledHeader = styled.header`
 `;
 
 export const Logo = styled.img`
-  left: calc(50% - 30px);
+  left: calc(50% - 24px);
   position: absolute;
   text-align: center;
-  top: 6px;
-  width: 60px;
+  top: 3px;
+  width: 48px;
 `;
 
 export const MenuIconWrapper = styled.div`

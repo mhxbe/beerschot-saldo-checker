@@ -49,6 +49,7 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
       new InjectManifest({
         swSrc: './service-worker/index.ts',
         swDest: 'sw.js',
+        include: [/\.php$/],
         exclude: [
           /\.DS_Store$/,
           /\.map$/,
