@@ -23,7 +23,8 @@
       "node": {
         "extensions": [".ts", ".tsx"]
       }
-    }
+    },
+    "polyfills": ["fetch"]
   },
   "extends": [
     "plugin:react/recommended",

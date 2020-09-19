@@ -1,18 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Workbox } from 'workbox-window';
-import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-/* :focus-visible polyfill */
-require('focus-visible');
+import 'focus-visible'; /* :focus-visible polyfill */
+import 'unfetch/polyfill'; /* fetch polyfill */
 
-ReactDOM.render(
-  <BrowserRouter basename="/">
-    <App />
-  </BrowserRouter>,
-  document.querySelector('#root')
-);
+ReactDOM.render(<App />, document.querySelector('#root'));
 
 if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
   const wb = new Workbox('./sw.js');

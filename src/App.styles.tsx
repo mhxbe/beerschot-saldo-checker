@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { css, Global } from '@emotion/core';
-import { Link as ReactRouterLink } from 'react-router-dom';
 import { BREAKPOINT_DESKTOP, HEADER_HEIGHT } from './constants';
 
 export const Main = styled.main`
@@ -74,7 +73,7 @@ export const Paragraph = styled.p`
   }
 `;
 
-const linkStyle = `
+export const Anchor = styled.a`
   &:link,
   &:visited {
     color: #015b6d;
@@ -82,13 +81,6 @@ const linkStyle = `
   &:hover {
     color: #060060;
   }
-`;
-export const Anchor = styled.a`
-  ${linkStyle}
-`;
-
-export const Link = styled(ReactRouterLink)`
-  ${linkStyle}
 `;
 
 export const List = styled.ul`
