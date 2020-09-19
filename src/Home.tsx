@@ -49,7 +49,7 @@ const Home: React.FC = () => {
         <title>Home</title>
         <meta
           name="description"
-          content="Met deze app kan je op snelle manier het saldo van je abonnementen raadplegen."
+          content="Met deze app kan je snel het saldo van je abonnementen raadplegen."
         />
       </Helmet>
       <Title>Check uw saldo</Title>
