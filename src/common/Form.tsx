@@ -28,7 +28,7 @@ const Form: React.FC<FormInterface> = ({
         defaultValue={cardNumber.toString()}
         type="number"
         id={`cardNumberInput-${id}`}
-        placeholder="Geef hier je cashless nummer in"
+        placeholder="8-cijferige code"
         min="0"
       />
       <button type="submit">Check</button>

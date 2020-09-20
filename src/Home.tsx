@@ -4,6 +4,7 @@ import * as queryString from 'query-string';
 import { Paragraph, Title, SubTitle } from './App.styles';
 import Form from './common/Form';
 import { getSaldo } from './api/index';
+import Card from './Card';
 
 export const isValidCardNumber = (cardNumber: string): boolean => {
   return new RegExp(/^\d+$/).test(cardNumber);
@@ -52,24 +53,29 @@ const Home: React.FC = () => {
           content="Met deze app kan je snel het saldo van je abonnementen raadplegen."
         />
       </Helmet>
-      <Title>Check uw saldo</Title>
+      <Title>Beerschot Abo Saldo Checker</Title>
       <Paragraph>
-        Voeg een abonnement toe om vervolgens het saldo te checken.
+        Geef je cashless-nummer in om je saldo te raadplegen.
       </Paragraph>
 
       <SubTitle>Abonnement 2019-2020</SubTitle>
-      <pre>{oldCardSaldo}</pre>
-      <Form id="1920" cardNumber={oldCard} changeCardNumber={setOldCard} />
+      <Card
+        id="2019-2020"
+        saldo={oldCardSaldo}
+        form={
+          <Form id="1920" cardNumber={oldCard} changeCardNumber={setOldCard} />
+        }
+      />
 
       <SubTitle>Abonnement 2020-2021</SubTitle>
-      <Form id="2021" cardNumber={newCard} changeCardNumber={setNewCard} />
-      <pre>{newCardSaldo}</pre>
-      <Paragraph>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quaerat
-        debitis recusandae quae sed natus dolores, quo ipsum quibusdam maiores
-        amet. Voluptatum odio ab fugit nulla cupiditate excepturi necessitatibus
-        distinctio?
-      </Paragraph>
+      <Card
+        id="2020-2021"
+        saldo={newCardSaldo}
+        jpg
+        form={
+          <Form id="2021" cardNumber={newCard} changeCardNumber={setNewCard} />
+        }
+      />
     </>
   );
 };

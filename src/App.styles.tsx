@@ -72,6 +72,71 @@ export const Paragraph = styled.p`
     margin-bottom: 0;
   }
 `;
+interface StyledCardProps {
+  isFlipped: boolean;
+}
+export const StyledCard = styled.div<StyledCardProps>`
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  transform: ${(props) =>
+    props.isFlipped && 'translateX(-100%) rotateY(-180deg)'};
+  width: 300px;
+  height: 189px;
+
+  @media (min-width: 769px) {
+    width: 350;
+    height: 221;
+  }
+
+  &:first-of-type {
+    margin-bottom: 12px;
+    margin-right: 12px;
+  }
+
+  .face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px 1px #b4b4b4;
+  }
+  .face--back {
+    transform: rotateY(180deg);
+  }
+`;
+
+interface CardBackgroundImageProps {
+  id: string;
+  side: string;
+  jpg?: boolean;
+}
+export const CardBackgroundImage = styled.div<CardBackgroundImageProps>`
+  ${({ id, side, jpg }) => css`
+    background-image: url(./images/${id}-${side}.${jpg ? 'jpg' : 'png'});
+    background-size: cover;
+  `}
+`;
+
+interface SaldoProps {
+  saldo: string;
+}
+export const Saldo = styled.span<SaldoProps>`
+  bottom: 32px;
+  font-size: 32px;
+  font-weight: bold;
+  left: 24px;
+  position: absolute;
+  color: ${(props) => (props.saldo === '0.00' ? 'inherit' : '#148a00')};
+
+  &:before {
+    content: '\\20AC';
+    margin-right: 6px;
+  }
+`;
 
 export const Anchor = styled.a`
   &:link,
@@ -89,21 +154,6 @@ export const List = styled.ul`
 
   li {
     line-height: 2.5rem;
-  }
-`;
-
-export const ButtonLink = styled.button`
-  background: transparent;
-  border: 0;
-  color: #015b6d;
-  cursor: pointer;
-  font-size: inherit;
-  margin: 0;
-  padding: 0;
-  text-decoration: underline;
-
-  &:hover {
-    color: #060060;
   }
 `;
 
@@ -140,6 +190,7 @@ const reset = css`
     min-height: 100%;
     overflow-y: auto;
     padding-top: ${HEADER_HEIGHT}px;
+    -webkit-tap-highlight-color: transparent;
   }
   #root {
     display: flex;
