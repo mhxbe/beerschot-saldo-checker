@@ -166,6 +166,32 @@ export const ButtonLink = styled.button`
   right: 12px;
 `;
 
+export const ButtonStyle = css`
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 32px;
+  margin: 0 0 0 6px;
+  padding: 0 6px;
+  text-transform: uppercase;
+  width: 100%;
+`;
+
+export const NoCardNumberButton = styled.button`
+  ${ButtonStyle}
+  background-color: #389a26;
+  position: absolute;
+  bottom: 24px;
+  left: 18px;
+  margin: 0;
+  width: auto;
+  box-shadow: 4px 3px 7px 0px rgba(212, 212, 212, 1);
+`;
+
 export const Anchor = styled.a`
   &:link,
   &:visited {

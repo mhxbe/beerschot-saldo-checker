@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { ButtonStyle } from '../App.styles';
 
 export const FormWrapper = styled.section`
   padding: 12px;
@@ -28,25 +28,11 @@ export const Input = styled.input`
   }
 `;
 
-const FormButtonStyle = css`
-  border-radius: 0;
-  border: 0;
-  box-shadow: none;
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  height: 32px;
-  margin: 0 0 0 6px;
-  padding: 0 6px;
-  text-transform: uppercase;
-  width: 100%;
-`;
 export const SubmitButton = styled.button`
   background-color: #2fadf7;
-  ${FormButtonStyle};
+  ${ButtonStyle};
 `;
 export const ClearButton = styled.button`
   background-color: crimson;
-  ${FormButtonStyle};
+  ${ButtonStyle};
 `;

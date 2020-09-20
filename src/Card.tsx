@@ -5,6 +5,7 @@ import {
   Saldo,
   CashlessNumber,
   ButtonLink,
+  NoCardNumberButton,
 } from './App.styles';
 import { ClearButton, FormWrapper, SubmitButton } from './common/Form.styles';
 
@@ -25,7 +26,7 @@ const Card: React.FC<CardProps> = ({
   saldo,
   jpg,
 }) => {
-  const [isFlipped, setIsFlipped] = React.useState(!number);
+  const [isFlipped, setIsFlipped] = React.useState(number && saldo);
 
   function submitForm(event: React.FormEvent): void {
     event.preventDefault();
@@ -50,10 +51,15 @@ const Card: React.FC<CardProps> = ({
           <>
             {saldo && <Saldo>{saldo}</Saldo>}
             <CashlessNumber>{number}</CashlessNumber>
-            <ButtonLink onClick={() => setIsFlipped(true)}>
+            <ButtonLink onClick={() => setIsFlipped(!isFlipped)}>
               wijzig cashless-nummer
             </ButtonLink>
           </>
+        )}
+        {!isFlipped && !number && (
+          <NoCardNumberButton onClick={() => setIsFlipped(!isFlipped)}>
+            Cashless-nummer ingeven
+          </NoCardNumberButton>
         )}
       </CardBackgroundImage>
       <CardBackgroundImage className="face face--back" id={id} side="back">
