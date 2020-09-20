@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as queryString from 'query-string';
 
+import { Input } from './Form.styles';
+
 interface FormProps {
   id: string;
   cardNumber: string;
@@ -8,33 +10,40 @@ interface FormProps {
   ref: any;
 }
 
-const Form: React.FC<FormProps> = React.forwardRef(
-  ({ id, cardNumber = '', changeCardNumber }, ref: any) => {
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
-      event.preventDefault();
-      const input = document.getElementById(
-        `cardNumberInput-${id}`
-      ) as HTMLInputElement;
-      changeCardNumber(input.value);
-      const parsedHash = queryString.parse(location.hash);
-      location.hash = queryString.stringify({
-        ...parsedHash,
-        [id]: input.value,
-      });
-    }
+const Form: React.FC<FormProps> = React.forwardRef(function FormElement(
+  { id, cardNumber = '', changeCardNumber },
+  ref: any
+) {
+  function handleSubmit(
+    event:
+      | React.FormEvent<HTMLFormElement>
+      | React.KeyboardEvent<HTMLInputElement>
+  ): void {
+    event.preventDefault();
+    const input = document.getElementById(
+      `cardNumberInput-${id}`
+    ) as HTMLInputElement;
+    changeCardNumber(input.value);
 
-    return (
-      <form onSubmit={handleSubmit} id={id} ref={ref}>
-        <input
-          defaultValue={cardNumber.toString()}
-          type="number"
-          id={`cardNumberInput-${id}`}
-          placeholder="8-cijferige code"
-          min="0"
-        />
-      </form>
-    );
+    const parsedHash = queryString.parse(location.hash);
+    const newHash = { ...parsedHash, [id]: input.value };
+    if (!input.value) {
+      delete newHash[id];
+    }
+    location.hash = queryString.stringify(newHash);
   }
-);
+
+  return (
+    <form onSubmit={handleSubmit} id={id} ref={ref}>
+      <Input
+        defaultValue={cardNumber.toString()}
+        type="number"
+        id={`cardNumberInput-${id}`}
+        placeholder="cashless-nummer"
+        min="0"
+      />
+    </form>
+  );
+});
 
 export default Form;

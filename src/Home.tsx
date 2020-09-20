@@ -63,14 +63,14 @@ const Home: React.FC = () => {
 
       <SubTitle>Abonnement 2019-2020</SubTitle>
       <Card
-        id="2019-2020"
+        id="1920"
         number={oldCard}
         saldo={oldCardSaldo}
         formRef={formRef1}
         form={
           <Form
             ref={formRef1}
-            id="2019-2020"
+            id="1920"
             cardNumber={oldCard}
             changeCardNumber={setOldCard}
           />
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
 
       <SubTitle>Abonnement 2020-2021</SubTitle>
       <Card
-        id="2020-2021"
+        id="2021"
         number={newCard}
         saldo={newCardSaldo}
         jpg
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
         form={
           <Form
             ref={formRef2}
-            id="2020-2021"
+            id="2021"
             cardNumber={newCard}
             changeCardNumber={setNewCard}
           />

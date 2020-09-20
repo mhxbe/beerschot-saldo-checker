@@ -6,6 +6,7 @@ import {
   CashlessNumber,
   ButtonLink,
 } from './App.styles';
+import { ClearButton, FormWrapper, SubmitButton } from './common/Form.styles';
 
 interface CardProps {
   id: string;
@@ -24,22 +25,28 @@ const Card: React.FC<CardProps> = ({
   saldo,
   jpg,
 }) => {
-  const [isFlipped, setIsFlipped] = React.useState(false);
-  React.useEffect(() => {
-    // nothing
-  }, [saldo]);
+  const [isFlipped, setIsFlipped] = React.useState(!number);
 
   function submitForm(event: React.FormEvent): void {
-    event?.preventDefault();
+    event.preventDefault();
+    // Check if clear-form button is clicked
+    if (event.currentTarget.classList.contains('clear-form')) {
+      const input = document.getElementById(
+        `cardNumberInput-${id}`
+      ) as HTMLInputElement;
+      input.value = '';
+    }
     formRef.current.dispatchEvent(new Event('submit'));
-    setIsFlipped(false);
+    const flipTimeout = setTimeout(() => {
+      setIsFlipped(false);
+      clearTimeout(flipTimeout);
+    }, 125);
   }
 
-  console.log('SALDO!', saldo);
   return (
     <StyledCard isFlipped={isFlipped}>
       <CardBackgroundImage className="face" id={id} side="front" jpg={jpg}>
-        {!isFlipped && (
+        {!isFlipped && number && (
           <>
             {saldo && <Saldo>{saldo}</Saldo>}
             <CashlessNumber>{number}</CashlessNumber>
@@ -50,8 +57,13 @@ const Card: React.FC<CardProps> = ({
         )}
       </CardBackgroundImage>
       <CardBackgroundImage className="face face--back" id={id} side="back">
-        {form}
-        <button onClick={submitForm}>Check</button>
+        <FormWrapper>
+          {form}
+          <SubmitButton onClick={submitForm}>Check</SubmitButton>
+          <ClearButton className="clear-form" onClick={submitForm}>
+            X
+          </ClearButton>
+        </FormWrapper>
       </CardBackgroundImage>
     </StyledCard>
   );
