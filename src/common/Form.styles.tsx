@@ -29,10 +29,11 @@ export const Input = styled.input`
 `;
 
 export const SubmitButton = styled.button`
-  background-color: #2fadf7;
   ${ButtonStyle};
+  background-color: #bfe7f8;
 `;
 export const ClearButton = styled.button`
-  background-color: crimson;
   ${ButtonStyle};
+  background-color: crimson;
+  color: white;
 `;

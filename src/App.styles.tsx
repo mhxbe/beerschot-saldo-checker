@@ -170,7 +170,7 @@ export const ButtonStyle = css`
   border-radius: 0;
   border: 0;
   box-shadow: none;
-  color: white;
+  color: #5d3281;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
@@ -183,7 +183,8 @@ export const ButtonStyle = css`
 
 export const NoCardNumberButton = styled.button`
   ${ButtonStyle}
-  background-color: #389a26;
+  background-color: #25651A;
+  color: #ffffff;
   position: absolute;
   bottom: 24px;
   left: 18px;
