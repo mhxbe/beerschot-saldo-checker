@@ -52,6 +52,7 @@ function getPlugins(mode: WebpackMode): WebpackPlugins {
         exclude: [
           /\.DS_Store$/,
           /\.map$/,
+          /\.php$/,
           /\.open-graph.(?:png|jpg|jpeg)$/,
           'report.html',
           'robots.txt',
