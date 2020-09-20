@@ -26,7 +26,10 @@ const Card: React.FC<CardProps> = ({
   saldo,
   jpg,
 }) => {
-  const [isFlipped, setIsFlipped] = React.useState(number && saldo);
+  const isFlippedDefaultValue = !!(number && saldo);
+  const [isFlipped, setIsFlipped] = React.useState<boolean>(
+    isFlippedDefaultValue
+  );
 
   function submitForm(event: React.FormEvent): void {
     event.preventDefault();
