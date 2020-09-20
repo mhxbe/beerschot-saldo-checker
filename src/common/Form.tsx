@@ -35,6 +35,9 @@ const Form: React.FC<FormProps> = React.forwardRef(function FormElement(
 
   return (
     <form onSubmit={handleSubmit} id={id} ref={ref}>
+      <label style={{ display: 'none' }} htmlFor={`cardNumberInput-${id}`}>
+        Cashless-nummer:
+      </label>
       <Input
         defaultValue={cardNumber.toString()}
         type="number"
