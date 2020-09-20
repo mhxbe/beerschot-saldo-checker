@@ -44,6 +44,9 @@ const Home: React.FC = () => {
     fetchSaldo();
   }, [newCard]);
 
+  const formRef1 = React.useRef(null);
+  const formRef2 = React.useRef(null);
+
   return (
     <>
       <Helmet>
@@ -61,19 +64,33 @@ const Home: React.FC = () => {
       <SubTitle>Abonnement 2019-2020</SubTitle>
       <Card
         id="2019-2020"
+        number={oldCard}
         saldo={oldCardSaldo}
+        formRef={formRef1}
         form={
-          <Form id="1920" cardNumber={oldCard} changeCardNumber={setOldCard} />
+          <Form
+            ref={formRef1}
+            id="2019-2020"
+            cardNumber={oldCard}
+            changeCardNumber={setOldCard}
+          />
         }
       />
 
       <SubTitle>Abonnement 2020-2021</SubTitle>
       <Card
         id="2020-2021"
+        number={newCard}
         saldo={newCardSaldo}
         jpg
+        formRef={formRef2}
         form={
-          <Form id="2021" cardNumber={newCard} changeCardNumber={setNewCard} />
+          <Form
+            ref={formRef2}
+            id="2020-2021"
+            cardNumber={newCard}
+            changeCardNumber={setNewCard}
+          />
         }
       />
     </>

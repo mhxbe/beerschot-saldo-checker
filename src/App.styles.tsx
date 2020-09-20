@@ -37,9 +37,14 @@ export const SubTitle = styled.h2`
   line-height: 1;
   padding-bottom: 0.75rem;
 
+  &:first-of-type {
+    padding-top: 0;
+  }
+
   @media (min-width: 440px) {
     font-size: 1.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+    padding-top: 1rem;
   }
 `;
 
@@ -77,7 +82,6 @@ interface StyledCardProps {
 }
 export const StyledCard = styled.div<StyledCardProps>`
   position: relative;
-  cursor: pointer;
   transform-style: preserve-3d;
   transform-origin: center right;
   transition: transform 1s;
@@ -121,21 +125,45 @@ export const CardBackgroundImage = styled.div<CardBackgroundImageProps>`
   `}
 `;
 
-interface SaldoProps {
-  saldo: string;
-}
-export const Saldo = styled.span<SaldoProps>`
+export const Saldo = styled.span`
   bottom: 32px;
   font-size: 32px;
   font-weight: bold;
   left: 24px;
   position: absolute;
-  color: ${(props) => (props.saldo === '0.00' ? 'inherit' : '#148a00')};
+  color: #5d3281;
 
   &:before {
     content: '\\20AC';
     margin-right: 6px;
   }
+`;
+
+export const CashlessNumber = styled.span`
+  bottom: 12px;
+  color: #5d3281;
+  font-family: monospace;
+  font-size: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  left: 24px;
+  letter-spacing: 2px;
+  position: absolute;
+`;
+
+export const ButtonLink = styled.button`
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  color: blue;
+  cursor: pointer;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
 `;
 
 export const Anchor = styled.a`
