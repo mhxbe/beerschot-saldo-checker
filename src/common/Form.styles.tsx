@@ -7,6 +7,7 @@ export const FormWrapper = styled.section`
   width: 100%;
   top: 108px;
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Input = styled.input`
@@ -26,6 +27,19 @@ export const Input = styled.input`
   &::placeholder {
     font-size: 13px;
   }
+`;
+
+export const Wrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`;
+
+export const Label = styled.label`
+  color: white;
+  font-size: 14px;
+  height: 24px;
+  width: 100%;
 `;
 
 export const SubmitButton = styled.button`

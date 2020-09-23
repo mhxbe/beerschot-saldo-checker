@@ -8,7 +8,13 @@ import {
   NoCardNumberButton,
   NoInternet,
 } from './App.styles';
-import { ClearButton, FormWrapper, SubmitButton } from './common/Form.styles';
+import {
+  ClearButton,
+  FormWrapper,
+  SubmitButton,
+  Wrap,
+  Label,
+} from './common/Form.styles';
 
 interface CardProps {
   id: string;
@@ -93,11 +99,14 @@ const Card: React.FC<CardProps> = ({
       </CardBackgroundImage>
       <CardBackgroundImage className="face face--back" id={id} side="back">
         <FormWrapper>
-          {form}
-          <SubmitButton onClick={submitForm}>Check</SubmitButton>
-          <ClearButton className="clear-form" onClick={submitForm}>
-            X
-          </ClearButton>
+          <Label htmlFor={`cardNumberInput-${id}`}>Cashless nummer:</Label>
+          <Wrap>
+            {form}
+            <SubmitButton onClick={submitForm}>Check</SubmitButton>
+            <ClearButton className="clear-form" onClick={submitForm}>
+              X
+            </ClearButton>
+          </Wrap>
         </FormWrapper>
       </CardBackgroundImage>
     </StyledCard>
