@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
 import * as queryString from 'query-string';
 import { Paragraph, Title, SubTitle } from './App.styles';
 import Form from './common/Form';
@@ -55,13 +54,6 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Home</title>
-        <meta
-          name="description"
-          content="Met deze app kan je snel het saldo van je abonnementen raadplegen."
-        />
-      </Helmet>
       <Title>Beerschot Abo Saldo Checker</Title>
       <Paragraph>
         Geef je cashless-nummer in om je saldo te raadplegen.
