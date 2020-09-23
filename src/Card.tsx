@@ -28,6 +28,21 @@ const Card: React.FC<CardProps> = ({
   jpg,
 }) => {
   const [isFlipped, setIsFlipped] = React.useState<boolean>(false);
+  const [onLine, setOnLine] = React.useState(navigator.onLine);
+
+  React.useEffect(() => {
+    function updateOnlineStatus(): void {
+      setOnLine(navigator.onLine);
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+
+    return function unsubscribe(): void {
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
+    };
+  }, []);
 
   function submitForm(event: React.FormEvent): void {
     event.preventDefault();
@@ -61,7 +76,7 @@ const Card: React.FC<CardProps> = ({
           <>
             {saldo && <Saldo>{saldo}</Saldo>}
             <CashlessNumber>{number}</CashlessNumber>
-            {navigator.onLine ? (
+            {onLine ? (
               <ButtonLink onClick={flipAndFocus}>
                 wijzig cashless-nummer
               </ButtonLink>
