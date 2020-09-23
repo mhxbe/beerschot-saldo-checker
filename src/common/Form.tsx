@@ -24,6 +24,10 @@ const Form: React.FC<FormProps> = React.forwardRef(function FormElement(
       `cardNumberInput-${id}`
     ) as HTMLInputElement;
     changeCardNumber(input.value);
+    // Clear localStorage card
+    id === '1920'
+      ? (localStorage.oldCard = input.value)
+      : (localStorage.newCard = input.value);
 
     const parsedHash = queryString.parse(location.hash);
     const newHash = { ...parsedHash, [id]: input.value };

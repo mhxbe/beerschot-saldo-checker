@@ -6,6 +6,7 @@ import {
   CashlessNumber,
   ButtonLink,
   NoCardNumberButton,
+  NoInternet,
 } from './App.styles';
 import { ClearButton, FormWrapper, SubmitButton } from './common/Form.styles';
 
@@ -26,10 +27,7 @@ const Card: React.FC<CardProps> = ({
   saldo,
   jpg,
 }) => {
-  const isFlippedDefaultValue = !!(number && saldo);
-  const [isFlipped, setIsFlipped] = React.useState<boolean>(
-    isFlippedDefaultValue
-  );
+  const [isFlipped, setIsFlipped] = React.useState<boolean>(false);
 
   function submitForm(event: React.FormEvent): void {
     event.preventDefault();
@@ -39,6 +37,10 @@ const Card: React.FC<CardProps> = ({
         `cardNumberInput-${id}`
       ) as HTMLInputElement;
       input.value = '';
+      // Clear localStorage saldo
+      id === '1920'
+        ? (localStorage.oldSaldo = '')
+        : (localStorage.newSaldo = '');
     }
     formRef.current.dispatchEvent(new Event('submit'));
     const flipTimeout = setTimeout(() => {
@@ -54,9 +56,13 @@ const Card: React.FC<CardProps> = ({
           <>
             {saldo && <Saldo>{saldo}</Saldo>}
             <CashlessNumber>{number}</CashlessNumber>
-            <ButtonLink onClick={() => setIsFlipped(!isFlipped)}>
-              wijzig cashless-nummer
-            </ButtonLink>
+            {navigator.onLine ? (
+              <ButtonLink onClick={() => setIsFlipped(!isFlipped)}>
+                wijzig cashless-nummer
+              </ButtonLink>
+            ) : (
+              <NoInternet>Geen internet.</NoInternet>
+            )}
           </>
         )}
         {!isFlipped && !number && (

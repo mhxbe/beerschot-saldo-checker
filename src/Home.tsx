@@ -12,13 +12,17 @@ export const isValidCardNumber = (cardNumber: string): boolean => {
 
 const Home: React.FC = () => {
   const qs = queryString.parse(location.hash);
-  const oldCardNumber = qs['1920'] as string;
-  const newCardNumber = qs['2021'] as string;
+  const oldCardNumber = (qs['1920'] || localStorage.oldCard || '') as string;
+  const newCardNumber = (qs['2021'] || localStorage.newCard || '') as string;
 
   const [oldCard, setOldCard] = React.useState(oldCardNumber);
   const [newCard, setNewCard] = React.useState(newCardNumber);
-  const [oldCardSaldo, setOldCardSaldo] = React.useState('');
-  const [newCardSaldo, setNewCardSaldo] = React.useState('');
+  const [oldCardSaldo, setOldCardSaldo] = React.useState(
+    localStorage.oldSaldo || ''
+  );
+  const [newCardSaldo, setNewCardSaldo] = React.useState(
+    localStorage.newSaldo || ''
+  );
 
   React.useEffect(() => {
     if (!oldCard || !isValidCardNumber(oldCard)) {
@@ -27,6 +31,7 @@ const Home: React.FC = () => {
     }
     async function fetchSaldo(): Promise<void> {
       const saldo = await getSaldo(oldCard);
+      localStorage.oldSaldo = saldo;
       return setOldCardSaldo(saldo);
     }
     fetchSaldo();
@@ -39,6 +44,7 @@ const Home: React.FC = () => {
     }
     async function fetchSaldo(): Promise<void> {
       const saldo = await getSaldo(newCard);
+      localStorage.newSaldo = saldo;
       return setNewCardSaldo(saldo);
     }
     fetchSaldo();

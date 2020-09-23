@@ -166,6 +166,14 @@ export const ButtonLink = styled.button`
   right: 12px;
 `;
 
+export const NoInternet = styled.span`
+  bottom: 12px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  position: absolute;
+  right: 12px;
+`;
+
 export const ButtonStyle = css`
   border-radius: 0;
   border: 0;
