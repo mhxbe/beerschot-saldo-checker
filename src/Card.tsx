@@ -49,6 +49,11 @@ const Card: React.FC<CardProps> = ({
     }, 125);
   }
 
+  function flipAndFocus(): void {
+    setIsFlipped(!isFlipped);
+    document?.getElementById(`cardNumberInput-${id}`)?.focus();
+  }
+
   return (
     <StyledCard isFlipped={isFlipped}>
       <CardBackgroundImage className="face" id={id} side="front" jpg={jpg}>
@@ -57,7 +62,7 @@ const Card: React.FC<CardProps> = ({
             {saldo && <Saldo>{saldo}</Saldo>}
             <CashlessNumber>{number}</CashlessNumber>
             {navigator.onLine ? (
-              <ButtonLink onClick={() => setIsFlipped(!isFlipped)}>
+              <ButtonLink onClick={flipAndFocus}>
                 wijzig cashless-nummer
               </ButtonLink>
             ) : (
@@ -66,7 +71,7 @@ const Card: React.FC<CardProps> = ({
           </>
         )}
         {!isFlipped && !number && (
-          <NoCardNumberButton onClick={() => setIsFlipped(!isFlipped)}>
+          <NoCardNumberButton onClick={flipAndFocus}>
             Cashless-nummer ingeven
           </NoCardNumberButton>
         )}
