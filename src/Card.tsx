@@ -114,6 +114,3 @@ const Card: React.FC<CardProps> = ({
 };
 
 export default Card;
-// export default React.forwardRef((props: CardProps, ref) => (
-//   <Card id={props.id} form={props.form} formRef={ref} />
-// ));
