@@ -35,8 +35,8 @@ const Form: React.FC<FormProps> = React.forwardRef(function FormElement(
     const newHash = { ...parsedHash, [id]: input.value };
     if (!input.value) {
       delete newHash[id];
-      location.hash = queryString.stringify(newHash);
     }
+    location.hash = queryString.stringify(newHash);
     if (process.env.NODE_ENV === 'production') {
       if (!input.value) {
         ReactGA.event({
