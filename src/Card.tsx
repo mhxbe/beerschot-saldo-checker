@@ -91,15 +91,17 @@ const Card: React.FC<CardProps> = ({
             )}
           </>
         )}
-        {!isFlipped &&
-          !number &&
-          (onLine ? (
-            <NoCardNumberButton onClick={flipAndFocus}>
-              Cashless-nummer ingeven
-            </NoCardNumberButton>
-          ) : (
-            <NoInternet>Gelieve verbinding te maken met internet.</NoInternet>
-          ))}
+        {!isFlipped && !number && (
+          <>
+            {onLine ? (
+              <NoCardNumberButton onClick={flipAndFocus}>
+                Cashless-nummer ingeven
+              </NoCardNumberButton>
+            ) : (
+              <NoInternet>Gelieve verbinding te maken met internet.</NoInternet>
+            )}
+          </>
+        )}
       </CardBackgroundImage>
       <CardBackgroundImage className="face face--back" id={id} side="back">
         <FormWrapper>
